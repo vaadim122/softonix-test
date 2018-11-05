@@ -1,0 +1,117 @@
+@import "vars";
+@import "_mixins/mixin";
+@import "media";
+
+//style navbar and logo
+header{
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  top: 0;
+  .navbar{
+    background-color: $menu-body-color;
+    border: none;
+    border-radius: 0;
+    height: 66px;
+    .navbar-header{
+      .navbar-brand{
+        height: auto;
+        padding: 0;
+        margin: 17px 0 0 -2px;
+        @media #{$mobile}{
+          margin: 15px;
+        }
+      }
+      .navbar-toggle{
+        margin-top: 17px;
+        margin-right: 17px;
+        background-color: white;
+        border: none;
+        border-radius: 2px;
+        .icon-bar{
+          background-color: $menu-body-color;
+        }
+      }
+    }
+    .navbar-collapse{
+      float: right;
+      padding: 0 5px;
+      @media #{$mobile}{
+        position: absolute;
+        right: 15px;
+        width: 300px;
+        overflow: hidden;
+        padding: 10px;
+      }
+      ul{
+        @media #{$mobile}{
+         background-color: $menu-body-color;
+          margin: 0;
+          border: 1px solid #d2d3d5;
+          box-shadow: 0 0 11px 3px rgba(0,0,0,.5);
+          position: relative;
+          padding: 15px 0 20px;
+          &:before{
+            position: absolute;
+            content: ' ';
+            display: block;
+            width: 0;
+            height: 0;
+            top: -25px;
+            right: 16px;
+            border: 10px solid transparent;
+            border-bottom: 15px solid #d2d3d5;
+          }
+          &:after{
+            position: absolute;
+            content: ' ';
+            display: block;
+            width: 0;
+            height: 0;
+            top: -21px;
+            right: 16px;
+            border: 10px solid transparent;
+            border-bottom: 15px solid $menu-body-color;
+          }
+        }
+        li{
+          @media #{$mobile}{
+            text-align: center;
+          }
+          a{
+            @include text($helveticaneuel, 16px, $menu-text-color);
+            padding: 23px 14px;
+            &:hover{
+              background-color: $hover-menu;
+              color: $menu-text-color;
+            }
+            @media #{$mobile}{
+              padding: 10px;
+              @include text($helveticaneue, 17px, $menu-text-color);
+            }
+          }
+          .left-btn{
+            background-color: transparent;
+            border: 1px solid $menu-text-color;
+            border-radius: 4px;
+            margin-top: 19px;
+            margin-left: 25px;
+            padding: 4px 16px;
+            @include text($helveticaneuel, 16px, $menu-text-color);
+            @media #{$mobile}{
+              margin-top: 15px;
+              margin-left: 0;
+              @include text($helveticaneue, 17px, $menu-text-color);
+            }
+            &:hover{
+              color: $hover-btn-menu;
+              border-color: $hover-btn-menu;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
