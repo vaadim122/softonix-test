@@ -73,15 +73,14 @@ gulp.task('build', ['removedist', 'imagemin', 'sass', 'js'], function() {
 
 	var buildFiles = gulp.src([
 		'src/*.html',
-		'src/.htaccess',
 		]).pipe(gulp.dest('dist'));
 
 	var buildCss = gulp.src([
-		'src/css/main.min.css',
+		'src/css/*.css',
 		]).pipe(gulp.dest('dist/css'));
 
 	var buildJs = gulp.src([
-		'src/js/scripts.min.js',
+		'src/js/*.js',
 		]).pipe(gulp.dest('dist/js'));
 
 	var buildFonts = gulp.src([
