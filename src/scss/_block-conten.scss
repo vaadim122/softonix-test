@@ -53,8 +53,6 @@
     }
   }
   .content-container {
-    display: flex;
-    flex-wrap: wrap;
     padding: 20px 0 0 140px;
     @media #{$table}{
       padding: 20px 50px 0;
@@ -64,6 +62,14 @@
     }
     #tab_link1{
       display: none;
+    }
+    .dom{
+      .wrtaper-tab-block {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        overflow: hidden;
+      }
     }
     h1{
       flex: 1 0 100%;

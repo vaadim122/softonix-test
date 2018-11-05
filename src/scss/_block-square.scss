@@ -9,6 +9,7 @@
   overflow: hidden;
   .block-square{
     flex: 1 0 auto;
+    -webkit-box-flex: 1 0 auto;
     min-width: 50%;
     height: 390px;
     @media #{$mobile}{
